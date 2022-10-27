@@ -5,4 +5,4 @@ def height_perc(percentage):
 
 def width_perc(percentgae):
     return (settings.WIDTH / 100) * percentgae
-print(width_perc(25))
+#print(width_perc(25))

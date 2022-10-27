@@ -1,6 +1,5 @@
-from email import utils
 from tkinter import *
-from turtle import left
+from cell import Cell
 import settings
 import utils
 
@@ -13,7 +12,7 @@ root.resizable(False, False)
 
 top_frame = Frame(
     root,
-    bg = 'red', #change to black or something
+    bg = 'black', #change to black or something
     width = settings.WIDTH,
     height = utils.height_perc(25)
 )
@@ -22,7 +21,7 @@ top_frame.place(x=0, y=0)
 
 left_frame = Frame (
     root,
-    bg = 'blue', #change to something else
+    bg = 'black', #change to something else
     width = utils.width_perc(25),
     height = utils.height_perc(75)
 )
@@ -30,10 +29,19 @@ left_frame.place(x=0, y=utils.height_perc(25))
 
 center_frame = Frame (
     root,
-    bg='green', #change later to something
+    bg='black', #change later to something
     width=utils.width_perc(75),
     height=utils.height_perc(75)
 )
 center_frame.place(x=utils.width_perc(25), y=utils.height_perc(25))
+
+for x in range(settings.GRID_SIZE):
+    for y in range(settings.GRID_SIZE):
+        c = Cell()
+        c.create_btn_object(center_frame)
+        c.cell_btn_object.grid(
+            column=x, row=y
+        )
+
 #run the window
 root.mainloop()
