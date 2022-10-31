@@ -5,7 +5,7 @@ import utils
 
 root = Tk()
 #override settings of window
-root.configure(bg="#52616B")
+root.configure(bg="black")
 root.geometry(f'{settings.WIDTH}x{settings.HEIGHT}')
 root.title("Minesweeper")
 root.resizable(False, False)
